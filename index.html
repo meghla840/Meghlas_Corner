@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f1ff">
+<title>Meghla's Corner — A little space for your big dreams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ff;--card:#fff;--ink:#28275f;--muted:#7370a3;--p:#7b68ee;--p2:#a595f5;--lav:#ece8ff;--line:#e8e4fb;--mint:#dff7ee;--h1:#e2defd;--h2:#fbe3f0;--sh:0 6px 20px #5b49a31a;--serif:Fraunces,Georgia,serif}
+body.night{--bg:#1d1b36;--card:#2a2748;--ink:#f3efff;--muted:#aaa6d2;--lav:#38345f;--line:#3a3663;--h1:#3b3470;--h2:#4a3358;--sh:0 6px 20px #0006}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:#d9d2fa;display:flex;justify-content:center;align-items:center}
+button,input,textarea{font:inherit;color:inherit}button{cursor:pointer;border:0}
+.phone{position:relative;width:100%;height:100dvh;background:var(--bg);display:flex;flex-direction:column;overflow:hidden;transition:background .3s}
+@media(min-width:520px){.phone{width:410px;height:min(860px,calc(100dvh - 32px));border-radius:38px;box-shadow:0 30px 70px #4b3a9c40,0 0 0 8px #1f1b3d}}
+.head{display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top,0px)) 18px 10px}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.logo{flex:none;width:42px;height:42px;border-radius:15px;background:var(--lav);display:grid;place-items:center;font-size:1.4rem}
+.brand b{display:block;font-family:var(--serif);font-size:1.12rem;line-height:1.1}
+.brand small{display:block;font-size:.76rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hbtns{display:flex;gap:8px}
+.ib{width:40px;height:40px;border-radius:50%;background:var(--card);box-shadow:var(--sh);font-size:1rem}
+.searchbar{padding:0 18px 8px}.searchbar input{width:100%;padding:12px 16px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);outline:none}
+.hidden{display:none!important}
+.screens{flex:1;min-height:0;overflow-y:auto;padding:6px 18px 20px;scrollbar-width:none}.screens::-webkit-scrollbar{display:none}
+.screen{display:none}.screen.active{display:block;animation:sw .25s ease}
+#s-bestie.active{display:flex;flex-direction:column;height:100%}
+@keyframes sw{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h2.t{font-family:var(--serif);font-size:1.7rem;margin:6px 0 4px;display:flex;align-items:center;justify-content:space-between}
+.sub{font-size:.84rem;color:var(--muted);margin:0 0 14px;line-height:1.5}
+.card{background:var(--card);border-radius:24px;padding:16px;box-shadow:var(--sh);margin-bottom:14px}
+.card h3{margin:0 0 10px;font-size:1rem;display:flex;align-items:center;gap:8px}
+.chip{font-family:Nunito;font-size:.8rem;font-weight:800;background:var(--lav);color:var(--p);padding:5px 12px;border-radius:99px}
+.hero{border-radius:28px;padding:24px 20px;background:linear-gradient(135deg,var(--h1),var(--h2));position:relative;overflow:hidden;margin-bottom:14px}
+.hero:after{content:"☁️ ✨";position:absolute;right:14px;top:12px;font-size:1.6rem;opacity:.6}
+.hero h1{font-family:var(--serif);font-size:1.65rem;line-height:1.2;margin:26px 0 10px}
+.hero p{margin:0 0 18px;line-height:1.6;font-size:.92rem;color:var(--muted)}
+.btn{border-radius:16px;padding:13px 18px;font-weight:800;background:var(--lav);color:var(--ink)}
+.btn.p{background:linear-gradient(120deg,var(--p2),var(--p));color:#fff;box-shadow:0 8px 18px #7b68ee40}
+.btn.w{width:100%}
+.sm{padding:7px 12px;border-radius:12px;font-size:.78rem;background:var(--lav);font-weight:700}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.q{background:var(--card);box-shadow:var(--sh);border-radius:20px;padding:12px 4px 10px;font-size:.72rem;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:6px}
+.q i{font-style:normal;width:40px;height:40px;border-radius:14px;display:grid;place-items:center;font-size:1.2rem;background:var(--lav)}
+.q:nth-child(2) i{background:#dff7ee}.q:nth-child(3) i{background:#ffe7ee}.q:nth-child(4) i{background:#e6f1ff}
+.moods{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.mood{background:transparent;border:2px solid transparent;border-radius:18px;padding:8px 0 6px;font-size:.68rem;font-weight:700;color:var(--muted)}
+.mood span{display:grid;place-items:center;margin:0 auto 5px;width:44px;height:44px;border-radius:50%;font-size:1.5rem;background:#dff7ee}
+.mood:nth-child(2) span{background:#fff0c9}.mood:nth-child(3) span{background:#ffe3be}.mood:nth-child(4) span{background:#ffd9d9}.mood:nth-child(5) span{background:#ffcaca}
+.mood.selected{border-color:var(--p);background:var(--lav);color:var(--ink)}
+.quote{margin:12px 0;padding:14px;border-radius:18px;background:linear-gradient(130deg,var(--h2),var(--h1));font-family:var(--serif);line-height:1.55;font-size:.95rem}
+textarea,.field{width:100%;border:1.5px solid var(--line);background:var(--bg);border-radius:16px;padding:13px;outline:none;resize:none}
+textarea:focus,.field:focus,.searchbar input:focus{border-color:var(--p);box-shadow:0 0 0 3px #7b68ee22}
+.field{margin-bottom:10px}
+.notice{font-size:.74rem;color:var(--muted);line-height:1.5;margin:10px 0 0}
+.note{background:linear-gradient(145deg,#fff6ee,#ffe9f0);color:#4a3b66}
+.note blockquote{margin:6px 0;font-family:var(--serif);font-size:1.08rem;line-height:1.6}
+body.night .note{background:linear-gradient(145deg,#3d3358,#4a3358);color:var(--ink)}
+.prog{height:8px;background:var(--lav);border-radius:99px;overflow:hidden;margin:8px 0 12px}
+.prog span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--p2),#61cfad);transition:width .3s}
+.task{display:flex;align-items:center;gap:12px;background:var(--card);box-shadow:var(--sh);border-radius:18px;padding:13px 14px;margin-bottom:10px;font-weight:600;font-size:.92rem}
+.task input{appearance:none;flex:none;width:24px;height:24px;border-radius:50%;border:2px solid var(--p2);display:grid;place-items:center;margin:0}
+.task input:checked{background:#61cfad;border-color:#61cfad}.task input:checked:after{content:"✓";color:#fff;font-size:.8rem;font-weight:800}
+.task.done span{text-decoration:line-through;color:var(--muted)}.task span{flex:1}
+.addrow{display:flex;gap:8px;margin:14px 0}.addrow .field{margin:0;flex:1;min-width:0}.addrow .btn{padding:0 18px}
+.event{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-size:.88rem}.event:last-of-type{border-bottom:0}
+.event time{flex:none;width:72px;font-weight:800;color:var(--p);font-size:.8rem}
+.goal{font-size:.92rem;font-weight:600}.goal .row{display:flex;justify-content:space-between;align-items:center;gap:8px}.goal strong{color:var(--p)}.goal .acts{display:flex;justify-content:space-between}
+.dream{padding:14px;border-radius:18px;line-height:1.55;background:linear-gradient(120deg,var(--h1),var(--h2));margin-bottom:12px;font-size:.92rem}
+.je{background:var(--bg);border-radius:18px;padding:14px;margin-top:10px;font-size:.88rem;line-height:1.55}.je strong{display:block;margin:3px 0;font-size:.98rem}.subtle{font-size:.76rem;color:var(--muted)}.empty{color:var(--muted);font-size:.85rem;text-align:center;padding:14px}
+.chatlog{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:4px 0 10px;scrollbar-width:none}
+.bub{max-width:86%;padding:12px 14px;font-size:.88rem;line-height:1.55;border-radius:20px 20px 20px 6px;background:var(--card);box-shadow:var(--sh)}
+.bub.me{align-self:flex-end;background:linear-gradient(120deg,var(--p2),var(--p));color:#fff;border-radius:20px 20px 6px 20px}
+.chatin{display:flex;gap:8px;padding-top:8px}.chatin .field{margin:0;flex:1;min-width:0;border-radius:99px;padding:13px 18px;background:var(--card)}
+.send{flex:none;width:48px;height:48px;border-radius:50%;background:linear-gradient(120deg,var(--p2),var(--p));color:#fff;font-size:1.1rem}
+.foot{text-align:center;color:var(--muted);font-family:var(--serif);font-size:.9rem;padding:8px 0 4px}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);align-items:end;background:var(--card);padding:8px 8px calc(10px + env(safe-area-inset-bottom,0px));border-radius:26px 26px 0 0;box-shadow:0 -8px 24px #5b49a314}
+.tab{background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.68rem;font-weight:700;color:var(--muted);padding:2px 0}
+.tab .ic{width:46px;height:30px;border-radius:99px;display:grid;place-items:center;font-size:1.15rem;transition:.2s}
+.tab.on{color:var(--p)}.tab.on .ic{background:var(--lav)}
+.tab.mid .ic{width:56px;height:56px;margin-top:-26px;border-radius:50%;background:linear-gradient(135deg,var(--p2),var(--p));box-shadow:0 8px 18px #7b68ee55;font-size:1.4rem;border:4px solid var(--card)}
+.toast{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);background:#302d66;color:#fff;padding:11px 18px;border-radius:99px;font-size:.84rem;font-weight:700;z-index:9;display:none;white-space:nowrap}
+ .breath{display:grid;place-items:center;height:150px}
+.orb{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;text-align:center;font-size:.78rem;font-weight:800;padding:6px;background:radial-gradient(circle at 35% 30%,#fff,var(--p2));color:#2d2a6e;box-shadow:0 0 0 14px #a595f522,0 0 0 30px #a595f512}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:8px}
+.wd{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 0;border-radius:14px;background:var(--bg)}.wd.today{outline:2px solid var(--p2)}.wd small{font-size:.68rem;color:var(--muted);font-weight:700}.wd span{font-size:1.2rem;height:26px;display:grid;place-items:center;color:var(--muted)}
+.win{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.88rem}.win:last-child{border:0}.win span{flex:1}
+.vrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.send.mic{background:var(--lav)}.send.mic.on{background:#ff8fa3;animation:pulse 1s infinite}@keyframes pulse{50%{transform:scale(1.1)}}
+:focus-visible{outline:3px solid var(--p);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="phone">
+<header class="head">
+  <div class="brand"><span class="logo">🌸</span><div><b>Meghla's Corner</b><small id="greeting">A little space for your big dreams ♥</small></div></div>
+  <div class="hbtns"><button class="ib" id="searchBtn" aria-label="Search">🔍</button><button class="ib" id="themeBtn" aria-label="Change theme">☾</button></div>
+</header>
+<div class="searchbar hidden" id="searchBar"><input id="search" placeholder="Search tasks, goals, notes..." aria-label="Search"></div>
+
+<main class="screens">
+  <!-- HOME -->
+  <section class="screen active" id="s-home">
+    <div class="hero">
+      <h1>A soft place to land, Meghla ☀️</h1>
+      <p>You don't have to figure everything out today. Take a breath, be kind to yourself, and take one little step at a time.</p>
+      <button class="btn p" onclick="go('bestie')">💗 Let's talk for a bit</button>
+    </div>
+    <div class="quick">
+      <button class="q" onclick="go('journal','#journalText')"><i>📓</i>Write in Journal</button>
+      <button class="q" onclick="go('tasks','#newTask')"><i>☑️</i>Add New Task</button>
+      <button class="q" onclick="go('goals')"><i>🎯</i>View Goals</button>
+      <button class="q" onclick="go('bestie','#chatInput')"><i>💬</i>Chat with Bestie</button>
+    </div>
+    <div class="card" id="mood">
+      <h3>☻ Today's Mood</h3>
+      <div class="moods" id="moodButtons">
+        <button class="mood" data-mood="Great"><span>😄</span>Great</button><button class="mood" data-mood="Good"><span>🙂</span>Good</button><button class="mood" data-mood="Okay"><span>😐</span>Okay</button><button class="mood" data-mood="Not good"><span>🙁</span>Not good</button><button class="mood" data-mood="Bad"><span>😢</span>Bad</button>
+      </div>
+      <div class="quote" id="moodQuote">“It's okay to have bad days. They don't erase all the good days you've had.” ♡</div>
+      <p class="notice" style="margin:0 0 14px">Your mood is yours. You can change it any time.</p>
+      <h3>🌈 Mood Check-in</h3>
+      <p class="subtle" style="margin:0 0 8px">How are you feeling? Add a note if you'd like.</p>
+      <textarea id="moodNote" rows="3" placeholder="Tell yourself what's going on..."></textarea>
+      <button class="btn p w" style="margin-top:10px" id="saveMood">Save today's check-in</button>
+      <p class="notice" id="moodSaved"></p>
+      <h3 style="margin:16px 0 0">📅 This week</h3><div class="week" id="weekStrip"></div>
+    </div>
+    <div class="card"><h3>🫧 Take a breath</h3><div class="breath"><div class="orb" id="orb">Ready</div></div><p class="subtle" style="margin:0 0 10px;text-align:center">In 4, hold 4, out 6. About one minute.</p><button class="btn w" id="breathBtn" type="button">Start 1 minute</button></div>
+    <div class="card"><h3>🏆 Little wins</h3><p class="subtle" style="margin:0 0 8px" id="winCount">Something you did well today, however small.</p><form class="addrow" id="winForm" style="margin:0 0 6px"><input class="field" id="newWin" maxlength="100" placeholder="Today I managed to..." required><button class="btn p" type="submit">+</button></form><div id="winList"></div></div>
+    <div class="card note"><h3>✨ A Note for You</h3><blockquote>“Small steps every day can lead to beautiful places. Keep going, Meghla.”</blockquote><div style="font-size:1.8rem;text-align:right">🌷🦋</div></div>
+    <div class="foot">♡ Me, my dreams, my journey. One day at a time. ♡<p class="notice">Starter project • Data is stored in this browser only. Avoid entering sensitive information on shared devices.</p></div>
+  </section>
+
+  <!-- TASKS -->
+  <section class="screen" id="s-tasks">
+    <h2 class="t">Today's Tasks <span class="chip" id="taskCount">0/0</span></h2>
+    <div class="prog"><span id="taskProgress" style="width:0%"></span></div>
+    <div id="taskList"></div>
+    <form class="addrow" id="taskForm"><input class="field" id="newTask" maxlength="100" placeholder="Add a little task..." required><button class="btn p" type="submit">+ Add</button></form>
+    <div class="card">
+      <h3>▦ Gentle Schedule</h3>
+      <p class="subtle" id="todayDate" style="margin:0 0 6px"></p>
+      <div class="event"><time>10:00 AM</time><span>💻 Focus time / work</span></div>
+      <div class="event"><time>2:00 PM</time><span>📚 Learn something new</span></div>
+      <div class="event"><time>5:00 PM</time><span>🌿 Break & self-care</span></div>
+      <div class="event"><time>8:00 PM</time><span>♡ Family / quiet time</span></div>
+      <p class="notice">A gentle suggestion, not a strict rule. Change it to fit your day.</p>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section class="screen" id="s-journal">
+    <h2 class="t">Little Journal</h2>
+    <p class="sub">A private page, just for you.</p>
+    <form class="card" id="journalForm">
+      <input class="field" id="journalTitle" maxlength="80" placeholder="Give this moment a title">
+      <textarea id="journalText" rows="5" placeholder="Dear me, today I feel..."></textarea>
+      <button class="btn p w" style="margin-top:10px" type="submit">Save to my journal</button>
+    </form>
+    <div id="journalList"></div>
+  </section>
+
+  <!-- GOALS -->
+  <section class="screen" id="s-goals">
+    <h2 class="t">My Goals</h2>
+    <p class="sub">Dreams & Future</p>
+    <div id="goalList"></div>
+    <form class="addrow" id="goalForm"><input class="field" id="newGoal" maxlength="80" placeholder="A new dream..." required><button class="btn p" type="submit">+ Add</button></form>
+    <div class="card">
+      <h3>🦋 Dreams & Future</h3>
+      <div class="dream">Your dreams deserve a plan, but you deserve rest along the way, too. ✨</div>
+      <p class="subtle" style="margin:0 0 8px">One small step for your future</p>
+      <textarea id="futureStep" rows="2" placeholder="This week, I'd like to..."></textarea>
+      <button class="btn w" id="saveFuture" style="margin-top:10px">Save my intention</button>
+      <p id="futureSaved" class="notice"></p>
+    </div>
+  </section>
+
+  <!-- BESTIE -->
+  <section class="screen" id="s-bestie">
+    <h2 class="t">Bestie Corner</h2>
+    <p class="sub" style="margin-bottom:8px">Here to listen</p>
+    <details class="card" style="padding:12px 16px;margin-bottom:10px"><summary style="font-weight:800;cursor:pointer">💜 What Bestie knows about me</summary><textarea id="aboutText" rows="4" style="margin-top:10px"></textarea><div style="display:flex;gap:8px;margin-top:10px"><button class="btn p" id="saveAbout" type="button" style="flex:1;padding:11px">Save</button><button class="btn" id="clearChat" type="button" style="padding:11px 14px">Clear chat</button></div><p class="notice">Saved only in this browser, on your device.</p>
+    <hr style="border:0;border-top:1px solid var(--line);margin:12px 0"><p class="subtle" style="margin:0 0 8px"><b>Free AI (when hosted on GitHub)</b><br>Get a free key at aistudio.google.com/apikey and paste it here. It stays on this device only. On the free plan Google may use chats to improve its products, so avoid names and private details.</p><input class="field" id="keyInput" type="password" placeholder="Gemini API key" autocomplete="off"><button class="btn w" id="saveKey" type="button" style="padding:11px">Save key</button></details>
+    <div class="chatlog" id="chatLog"><div class="bub">Hey Meghla 💜 I'm your little corner for reflection and encouragement. Want to tell me what's on your mind, or would you like help planning one small step?</div></div>
+    <div class="chatin"><input class="field" id="chatInput" placeholder="Type what's on your mind..." maxlength="500"><button class="send mic" id="micBtn" type="button" aria-label="Speak your message">🎙</button><button class="send" id="sendChat" type="button" aria-label="Send message">➤</button></div>
+    <div class="vrow"><button class="sm" id="voiceToggle" type="button">🔇 Voice replies: off</button><button class="sm" id="langBtn" type="button">🎤 বাংলা</button><span class="subtle" id="voiceStatus"></span></div>
+    <p class="notice" style="margin-top:8px">Replies come from an AI (Claude here, or Gemini if you add a free key). It is a friendly helper, not a person or a therapist. If you ever feel unsafe, reach out to someone you trust or local emergency services.</p>
+  </section>
+</main>
+
+<nav class="tabs" aria-label="Main navigation">
+  <button class="tab on" data-go="home"><span class="ic">🏡</span>Home</button>
+  <button class="tab" data-go="tasks"><span class="ic">☑️</span>Tasks</button>
+  <button class="tab mid" data-go="bestie" aria-label="AI Bestie"><span class="ic">💬</span>Bestie</button>
+  <button class="tab" data-go="journal"><span class="ic">📖</span>Journal</button>
+  <button class="tab" data-go="goals"><span class="ic">🎯</span>Goals</button>
+</nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const STORE = 'meghlasCorner_v1';
+const defaultData = {tasks:[{text:'Take a short break',done:false},{text:'Practice English for 15 minutes',done:false},{text:'Work on one personal goal',done:false}],mood:'',moodNote:'',journals:[],goals:[{text:'Practice English',progress:35},{text:'Learn web development',progress:25},{text:'Save money',progress:20}],futureStep:'',night:false,chat:[],about:"I recently graduated and now I work at a job. My office feels toxic, and I often feel frustrated and drained by it. I'm worried and tense about my future."};
+let data;
+try { data = {...defaultData,...JSON.parse(localStorage.getItem(STORE) || '{}')}; } catch { data = {...defaultData}; }
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(data));}catch{}}
+function toast(msg){const t=$('#toast');t.textContent=msg;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',2400);}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+function go(name,focusSel){
+  $$('.screen').forEach(s=>s.classList.toggle('active',s.id==='s-'+name));
+  $$('.tab').forEach(t=>t.classList.toggle('on',t.dataset.go===name));
+  $('.screens').scrollTop=0;
+  if(focusSel)setTimeout(()=>$(focusSel).focus(),60);
+}
+$$('.tab').forEach(t=>t.addEventListener('click',()=>go(t.dataset.go)));
+
+function renderTasks(){const list=$('#taskList');list.innerHTML='';data.tasks.forEach((task,i)=>{const row=document.createElement('label');row.className='task'+(task.done?' done':'');row.innerHTML=`<input type="checkbox" ${task.done?'checked':''} aria-label="Complete task"><span>${esc(task.text)}</span><button type="button" class="sm" aria-label="Delete task">×</button>`;row.querySelector('input').addEventListener('change',e=>{data.tasks[i].done=e.target.checked;persist();renderTasks();});row.querySelector('button').addEventListener('click',e=>{e.preventDefault();data.tasks.splice(i,1);persist();renderTasks();});list.appendChild(row);});const done=data.tasks.filter(t=>t.done).length;$('#taskCount').textContent=`${done}/${data.tasks.length}`;$('#taskProgress').style.width=(data.tasks.length?done/data.tasks.length*100:0)+'%';}
+$('#taskForm').addEventListener('submit',e=>{e.preventDefault();const v=$('#newTask').value.trim();if(!v)return;data.tasks.push({text:v,done:false});$('#newTask').value='';persist();renderTasks();toast('Task added gently 🌱');});
+
+function renderGoals(){const list=$('#goalList');list.innerHTML='';data.goals.forEach((g,i)=>{const el=document.createElement('div');el.className='card goal';el.innerHTML=`<div class="row"><span>${esc(g.text)}</span><strong>${g.progress}%</strong></div><div class="prog"><span style="width:${g.progress}%"></span></div><div class="acts"><button class="sm">+10%</button><button class="sm">Remove</button></div>`;const b=el.querySelectorAll('button');b[0].addEventListener('click',()=>{data.goals[i].progress=Math.min(100,data.goals[i].progress+10);persist();renderGoals();});b[1].addEventListener('click',()=>{data.goals.splice(i,1);persist();renderGoals();});list.appendChild(el);});}
+$('#goalForm').addEventListener('submit',e=>{e.preventDefault();const v=$('#newGoal').value.trim();if(!v)return;data.goals.push({text:v,progress:0});$('#newGoal').value='';persist();renderGoals();toast('A new dream added ✨');});
+
+const moodReplies={Great:'Keep a little piece of this feeling with you. What helped today feel good? 💚',Good:'A good day is worth noticing. What is one thing you appreciate right now? 🌷',Okay:'You do not need to force yourself to feel amazing. Neutral is okay, too. 🌿','Not good':'That sounds heavy. Take it one thing at a time—what feels hardest right now? 💜',Bad:'I’m sorry today feels painful. Try one slow breath, and consider reaching out to someone you trust if you need support. You don’t have to handle everything alone. 💗'};
+$$('.mood').forEach(btn=>btn.addEventListener('click',()=>{data.mood=btn.dataset.mood;(data.moodLog=data.moodLog||{})[dkey(new Date())]=data.mood;renderWeek();$$('.mood').forEach(b=>b.classList.toggle('selected',b===btn));$('#moodQuote').textContent=moodReplies[data.mood];persist();}));
+$('#saveMood').addEventListener('click',()=>{data.moodNote=$('#moodNote').value.trim();persist();$('#moodSaved').textContent=`Saved for today${data.mood?' · Mood: '+data.mood:''}. Be gentle with yourself. ♡`;toast('Check-in saved');});
+
+function renderJournals(){const list=$('#journalList');list.innerHTML='';if(!data.journals.length){list.innerHTML='<p class="empty">Your saved reflections will appear here.</p>';return;}data.journals.slice(-3).reverse().forEach((j,i)=>{const el=document.createElement('div');el.className='card je';el.innerHTML=`<span class="subtle">${esc(j.date)}</span><strong>${esc(j.title||'A little reflection')}</strong><div>${esc(j.text).replace(/\n/g,'<br>')}</div><button class="sm" style="margin-top:10px">Delete</button>`;el.querySelector('button').addEventListener('click',()=>{data.journals.splice(data.journals.length-1-i,1);persist();renderJournals();});list.appendChild(el);});}
+$('#journalForm').addEventListener('submit',e=>{e.preventDefault();const text=$('#journalText').value.trim();if(!text){toast('Write a line or two first 💜');return;}data.journals.push({title:$('#journalTitle').value.trim(),text,date:new Date().toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})});$('#journalTitle').value='';$('#journalText').value='';persist();renderJournals();toast('Your reflection is saved ♡');});
+
+$('#saveFuture').addEventListener('click',()=>{data.futureStep=$('#futureStep').value.trim();persist();$('#futureSaved').textContent=data.futureStep?'Your intention is saved. One small step is enough. ♡':'';toast('Intention saved');});
+
+function replyFor(message){const m=message.toLowerCase();if(/suicid|kill myself|hurt myself|end my life/.test(m))return 'I’m really sorry you’re feeling this much pain. Your safety matters. Please reach out to someone you trust right now and stay near them. If you might act on these thoughts or are in immediate danger, contact local emergency services or go to the nearest emergency department. I can stay with you while you take that next step.';if(/sad|cry|upset|mood off|lonely|alone|bad day|মন খারাপ|কষ্ট|কাঁদ/.test(m))return 'I’m glad you said something, Meghla. 💜 You don’t have to solve everything this minute. Would it help to tell me what happened, take a calming breath together, or choose one tiny thing that might make the next ten minutes easier?';if(/task|work|busy|overwhelm|deadline|কাজ/.test(m))return 'Let’s make it lighter. 🌿 Write down everything on your mind, then choose just one task that takes 10 minutes or less. What is the most important thing you need to get done first?';if(/career|job|learn|study|english|ielts/.test(m))return 'You can build your future one small practice session at a time. ✨ What is your goal, and how much time do you realistically have today? We can make a simple plan together.';if(/thank/.test(m))return 'You’re welcome, Meghla. ♡ And give yourself credit for reaching out and trying. What would feel helpful next?';return 'I’m listening, Meghla. 💜 Tell me a little more about what you mean, and we can think it through together—without needing to figure everything out at once.';}
+const chatHist=Array.isArray(data.chat)?data.chat:[];let sampleFn=null,busy=false;
+try{if(window.claude)claude.use('sample').then(x=>{sampleFn=x}).catch(()=>{});}catch{}
+function bestieSys(){return `You are "Bestie", a warm, kind friend inside Meghla's personal planner app. What Meghla shared about herself: ${data.about||'(nothing yet)'}
+Reply in the same language she writes in (Bangla, Banglish or English). Keep replies short (2-4 sentences), gentle and practical, ask at most one question, and use at most one emoji. Validate her feelings first, then offer one small practical step (for example noting down work issues, setting boundaries, building skills, or preparing for a future job search). Be honest and balanced: do not push her to quit impulsively and do not trash-talk specific people. You are an AI friend, not a therapist or doctor. If she mentions wanting to hurt herself or being in danger, respond with care, encourage her to contact someone she trusts or local emergency services right now, and stay with her.`;}
+function addBub(t,me){const d=document.createElement('div');d.className='bub'+(me?' me':'');d.textContent=t;$('#chatLog').appendChild(d);return d;}
+chatHist.forEach(m=>addBub(m.content,m.role==='user'));
+$('#aboutText').value=data.about||'';
+$('#saveAbout').addEventListener('click',()=>{data.about=$('#aboutText').value.trim();persist();toast('Saved on this device ♡');});
+$('#clearChat').addEventListener('click',()=>{chatHist.length=0;data.chat=[];persist();$$('#chatLog .bub').forEach((b,i)=>{if(i)b.remove();});toast('Chat cleared');});
+async function sendChat(){
+  if(busy)return;const input=$('#chatInput'),message=input.value.trim();if(!message)return;
+  const log=$('#chatLog');const u=document.createElement('div');u.className='bub me';u.textContent=message;log.appendChild(u);input.value='';
+  const a=document.createElement('div');a.className='bub';a.textContent='…';log.appendChild(a);log.scrollTop=log.scrollHeight;
+  chatHist.push({role:'user',content:message});busy=true;let reply='';
+  try{
+    if(sampleFn){
+      const msgs=chatHist.slice(-12).map(m=>({...m}));
+      while(msgs[0].role!=='user')msgs.shift();
+      msgs[0].content=bestieSys()+'\n\n---\nMeghla says:\n'+msgs[0].content;
+      const r=await sampleFn(msgs,{cache:false,onText:({text})=>{a.textContent=text;log.scrollTop=log.scrollHeight;}});
+      reply=r.text;
+    }else if(data.gkey){reply=await askGemini();}
+    else throw 0;
+  }catch(e){reply=replyFor(message);if(data.gkey&&!sampleFn)toast('AI is not reachable now, used a simple reply');}
+  a.textContent=reply;speak(reply);chatHist.push({role:'assistant',content:reply});if(chatHist.length>30)chatHist.splice(0,chatHist.length-30);data.chat=chatHist;persist();busy=false;log.scrollTop=log.scrollHeight;
+}
+$('#sendChat').addEventListener('click',sendChat);$('#chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
+
+$('#searchBtn').addEventListener('click',()=>{const bar=$('#searchBar');bar.classList.toggle('hidden');if(!bar.classList.contains('hidden'))$('#search').focus();else{$('#search').value='';$('#search').dispatchEvent(new Event('input'));}});
+$('#search').addEventListener('input',e=>{const q=e.target.value.toLowerCase().trim();$$('.task,.goal,.je,.event,.card').forEach(el=>{el.style.opacity=!q||el.textContent.toLowerCase().includes(q)?'':'.4';});});
+
+function applyTheme(){document.body.classList.toggle('night',data.night);$('#themeBtn').textContent=data.night?'☀':'☾';$('meta[name=theme-color]').content=data.night?'#1d1b36':'#f4f1ff';}
+$('#themeBtn').addEventListener('click',()=>{data.night=!data.night;persist();applyTheme();});
+
+$('#todayDate').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'short',year:'numeric'});
+const hr=new Date().getHours();$('#greeting').textContent=(hr<12?'Good morning':hr<17?'Good afternoon':'Good evening')+', Meghla 🌤️';
+applyTheme();renderTasks();renderGoals();renderJournals();
+if(data.mood){const b=$$('.mood').find(x=>x.dataset.mood===data.mood);if(b)b.classList.add('selected');$('#moodQuote').textContent=moodReplies[data.mood];}
+$('#moodNote').value=data.moodNote||'';$('#futureStep').value=data.futureStep||'';
+
+async function askGemini(){
+  const contents=chatHist.slice(-12).map(m=>({role:m.role==='user'?'user':'model',parts:[{text:m.content}]}));
+  while(contents.length&&contents[0].role!=='user')contents.shift();
+  const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':data.gkey},body:JSON.stringify({systemInstruction:{parts:[{text:bestieSys()}]},contents,generationConfig:{temperature:.8,maxOutputTokens:1200}})});
+  if(!res.ok)throw new Error(res.status);
+  const j=await res.json();
+  const t=(j.candidates?.[0]?.content?.parts||[]).map(p=>p.text||'').join('').trim();
+  if(!t)throw new Error('empty');return t;
+}
+$('#keyInput').value=data.gkey||'';
+$('#saveKey').addEventListener('click',()=>{data.gkey=$('#keyInput').value.trim();persist();toast(data.gkey?'Key saved on this device ♡':'Key removed');});
+/* ---- extras: week, wins, breathing, voice ---- */
+const MOJI={Great:'😄',Good:'🙂',Okay:'😐','Not good':'🙁',Bad:'😢'};
+function dkey(d){return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+function renderWeek(){const w=$('#weekStrip');w.innerHTML='';for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const m=(data.moodLog||{})[dkey(d)];w.insertAdjacentHTML('beforeend',`<div class="wd${i?'':' today'}"><small>${d.toLocaleDateString(undefined,{weekday:'short'}).slice(0,2)}</small><span>${m?MOJI[m]:'·'}</span></div>`);}}
+data.wins=data.wins||[];
+function renderWins(){const l=$('#winList');l.innerHTML='';data.wins.slice(-5).reverse().forEach((w,i)=>{const el=document.createElement('div');el.className='win';el.innerHTML=`<span>🌟 ${esc(w.text)}</span><small class="subtle">${esc(w.date)}</small><button class="sm" aria-label="Delete win">×</button>`;el.querySelector('button').addEventListener('click',()=>{data.wins.splice(data.wins.length-1-i,1);persist();renderWins();});l.appendChild(el);});if(data.wins.length)$('#winCount').textContent=`${data.wins.length} little win${data.wins.length>1?'s':''} so far. Look how far you've come.`;}
+$('#winForm').addEventListener('submit',e=>{e.preventDefault();const v=$('#newWin').value.trim();if(!v)return;data.wins.push({text:v,date:new Date().toLocaleDateString(undefined,{day:'numeric',month:'short'})});$('#newWin').value='';persist();renderWins();toast('That counts. Well done 🌟');});
+let breathT=[],breathOn=false;
+function stopBreath(){breathT.forEach(clearTimeout);breathT=[];breathOn=false;const o=$('#orb');o.style.transition='transform .6s';o.style.transform='scale(1)';o.textContent='Ready';$('#breathBtn').textContent='Start 1 minute';}
+$('#breathBtn').addEventListener('click',()=>{if(breathOn){stopBreath();return;}breathOn=true;$('#breathBtn').textContent='Stop';const o=$('#orb');let t=0;const step=(txt,sec,sc)=>{breathT.push(setTimeout(()=>{o.textContent=txt;o.style.transition=`transform ${sec}s ease-in-out`;o.style.transform=`scale(${sc})`;},t*1000));t+=sec;};for(let i=0;i<4;i++){step('Breathe in',4,1.45);step('Hold',4,1.45);step('Breathe out',6,1);}breathT.push(setTimeout(()=>{stopBreath();toast('Well done 🌿');},t*1000));});
+let voiceOn=false,vlang='bn-BD';
+const vs=$('#voiceStatus');
+function speak(text){if(!voiceOn||!('speechSynthesis' in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=/[\u0980-\u09FF]/.test(text)?'bn-BD':'en-US';u.rate=.96;speechSynthesis.speak(u);}
+$('#voiceToggle').addEventListener('click',e=>{voiceOn=!voiceOn;e.target.textContent=voiceOn?'🔊 Voice replies: on':'🔇 Voice replies: off';if(!voiceOn&&'speechSynthesis' in window)speechSynthesis.cancel();});
+$('#langBtn').addEventListener('click',e=>{vlang=vlang==='bn-BD'?'en-US':'bn-BD';e.target.textContent=vlang==='bn-BD'?'🎤 বাংলা':'🎤 English';});
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+$('#micBtn').addEventListener('click',()=>{if(!SR){vs.textContent='Voice input needs Chrome or Safari.';return;}const r=new SR();r.lang=vlang;r.interimResults=false;
+r.onstart=()=>{$('#micBtn').classList.add('on');vs.textContent='Listening…';};
+r.onend=()=>{$('#micBtn').classList.remove('on');if(vs.textContent==='Listening…')vs.textContent='';};
+r.onerror=()=>{$('#micBtn').classList.remove('on');vs.textContent='Could not use the microphone here. Type instead, or allow mic access.';};
+r.onresult=e=>{$('#chatInput').value=e.results[0][0].transcript;sendChat();};
+try{r.start();}catch{vs.textContent='Microphone is busy.';}});
+renderWeek();renderWins();
+</script>
+</body>
+</html>
